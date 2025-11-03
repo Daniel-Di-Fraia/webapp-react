@@ -10,7 +10,7 @@ const DefLayout = () => {
     return (
         <>
             <MyHeader />
-            <main className="container">
+            <main className="bg-dark">
                 <Outlet />
             </main>
         </>

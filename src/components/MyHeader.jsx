@@ -6,9 +6,9 @@ function MyHeader() {
 
     return (
         <>
-            <header className="navbar bg-body-tertiary mb-4">
-                <nav className="container-fluid justify-content-start">
-                    <Link className="navbar-brand" to="/">Movie List!!</Link>
+            <header className="navbar bg-black">
+                <nav className="container-fluid justify-content-center">
+                    <Link className="navbar-brand fs-2 text-white" to="/">Movie List</Link>
                 </nav>
             </header>
         </>

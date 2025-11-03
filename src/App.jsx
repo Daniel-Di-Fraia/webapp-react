@@ -9,17 +9,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
 
-    return (
-        <>
-            <BrowserRouter>
-                <Routes>
-                    <Route element={<DefLayout />}>
-                        <Route index element={<HomePage />} />
-                    </Route>
-                </Routes>
-            </BrowserRouter>
-        </>
-    )
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<DefLayout />}>
+            <Route index element={<HomePage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
+  )
 }
 
 export default App
