@@ -63,7 +63,7 @@ const MoviePage = () => {
                 </section>
             </div>
             <footer className="pb-5 container d-flex justify-content-center">
-                <Link className="btn btn-warning" to="/">Back to home</Link>
+                <Link className="btn btn-warning fs-5" to="/">Back to home</Link>
             </footer>
 
         </>
