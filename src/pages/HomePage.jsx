@@ -37,7 +37,7 @@ const HomePage = () => {
 
     return (
         <>
-            <div className="container pt-5">
+            <div className="container">
                 <h1 className="text-warning pt-5">Movies</h1>
                 <h2 className="text-white pt-2"><i>Best Movies ever</i></h2>
                 <div className="d-flex flex-wrap mt-4 gap-3 pb-5">

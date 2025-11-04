@@ -4,6 +4,9 @@ import { Link, useParams } from "react-router-dom"
 // import state e effetc
 import { useState, useEffect } from "react"
 
+// import axios
+import axios from "axios"
+
 // import comp singola review
 import ReviewCard from "../components/reviewCard"
 
@@ -15,27 +18,45 @@ const MoviePage = () => {
     // recuperiamo il parametro dinamico
     const { id } = useParams();
 
-    
+    // prepariamo funzione per la chiamata axios
+    const fecthMovie = () => {
+        axios.get('http://localhost:3000/movies/' + id)
+            .then(response => { setMovie(response.data) })
+            .catch(error => { console.log(error) })
+    }
+
+    // faccio partire la chiamata
+    useEffect(fecthMovie, []);
+
+    // funzione di generazione istanze reviews
+    const renderReviews = () => {
+        return movie?.reviews.map(review => {
+            return (
+                <ReviewCard reviewProp={review} key={review.id} />
+            )
+        })
+    }
 
 
     return (
         <>
-            <div className="container pt-5">
-                <section className="pt-5 mb-3 text-white">
-                    <h1>Titolo Film</h1>
-                    <h3 className="text-muted"><i>By Nome regista</i></h3>
-                    <p className="pb-4">lorem ipsm dolor sit amet</p>
+            <div className="container d-flex justify-content-center">
+                <section className="pt-5 mb-3 text-white wi">
+                    <div className="mb-3">
+                        <img className="dim" src={movie?.image} alt={movie?.title} />
+                    </div>
+                    <h1>{movie?.title}</h1>
+                    <h3 className="text-white"><i>By {movie?.director}</i></h3>
+                    <p className="p-dim pb-2">{movie?.abstract}</p>
                 </section>
                 <section>
                     <header className="d-flex justify-content-between align-items-center mb-4 text-white pt-5">
                         <h4>Our community reviews</h4>
                     </header>
-                    <ReviewCard />
-                    <ReviewCard />
-                    <ReviewCard />
+                    {renderReviews()}
                 </section>
             </div>
-            <footer className="pb-5 container pt-4 d-flex justify-content-end">
+            <footer className="pb-5 container d-flex justify-content-center">
                 <Link className="btn btn-warning" to="/">Back to home</Link>
             </footer>
 

@@ -3,3 +3,17 @@ img {
     width: 410px;
     object-fit: cover;
 }
+
+.dim {
+    max-height: 525px;
+    max-width: 360px;
+    object-fit: cover;
+}
+
+.wi {
+    width: 40%;
+}
+
+.p-dim {
+    width: 70%;
+}
