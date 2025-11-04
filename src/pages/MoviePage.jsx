@@ -40,7 +40,7 @@ const MoviePage = () => {
 
     return (
         <>
-            <div className="container d-flex justify-content-center">
+            <div className="container d-flex justify-content-center gap">
                 <section className="pt-5 mb-3 text-white wi">
                     <div className="mb-3">
                         <img className="dim" src={movie?.image} alt={movie?.title} />
@@ -50,8 +50,8 @@ const MoviePage = () => {
                     <p className="p-dim pb-2">{movie?.abstract}</p>
                 </section>
                 <section>
-                    <header className="d-flex justify-content-between align-items-center mb-4 text-white pt-5">
-                        <h4>Our community reviews</h4>
+                    <header className="d-flex justify-content-between mb-4 text-white pt-5">
+                        <h4 className="fs-2 text-warning">Our community reviews</h4>
                     </header>
                     {renderReviews()}
                 </section>

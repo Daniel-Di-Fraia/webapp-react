@@ -5,15 +5,19 @@ img {
 }
 
 .dim {
-    max-height: 525px;
+    max-height: 533px;
     max-width: 360px;
     object-fit: cover;
 }
 
 .wi {
-    width: 40%;
+    width: 28%;
 }
 
 .p-dim {
     width: 70%;
+}
+
+.gap {
+    gap: 8rem;
 }

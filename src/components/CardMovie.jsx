@@ -14,7 +14,7 @@ const CardMovie = ({ MovieProp }) => {
                 <h5 className="card-title">{title}</h5>
                 <p>{release_year}</p>
                 <p>{genre}</p>
-                <Link to= {`movies/${id}`} className="btn btn-warning">
+                <Link to={`movies/${id}`} className="btn btn-warning">
                     Dettagli
                 </Link>
             </div>
