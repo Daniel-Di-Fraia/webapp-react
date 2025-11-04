@@ -1,5 +1,5 @@
 // import di router-dom per link
-import { Link, useParams } from "react-router-dom"
+import { Link, useParams, useNavigate } from "react-router-dom"
 
 // import state e effetc
 import { useState, useEffect } from "react"
@@ -18,11 +18,17 @@ const MoviePage = () => {
     // recuperiamo il parametro dinamico
     const { id } = useParams();
 
+    // creiamo istanza di Navigate
+    const redirect = useNavigate();
+
     // prepariamo funzione per la chiamata axios
     const fecthMovie = () => {
         axios.get('http://localhost:3000/movies/' + id)
             .then(response => { setMovie(response.data) })
-            .catch(error => { console.log(error) })
+            .catch(error => {
+                console.log(error)
+                if (error.status === 404) redirect('/404')
+            })
     }
 
     // faccio partire la chiamata
