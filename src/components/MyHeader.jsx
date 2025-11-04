@@ -1,14 +1,14 @@
 // import di router-dom per link
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 function MyHeader() {
 
 
     return (
         <>
-            <header className="navbar bg-black">
+            <header className="navbar bg-black fixed-top">
                 <nav className="container-fluid justify-content-center">
-                    <Link className="navbar-brand fs-2 text-white" to="/">Movie List</Link>
+                    <NavLink className="navbar-brand fs-1 text-warning" to="/">Movie List</NavLink>
                 </nav>
             </header>
         </>

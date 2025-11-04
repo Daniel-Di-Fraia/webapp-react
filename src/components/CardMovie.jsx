@@ -1,20 +1,25 @@
 // import di router-dom per link
 import { Link } from "react-router-dom"
 
-const CardMovie = () => {
+const CardMovie = ({ MovieProp }) => {
+
+    // destrutturazione
+    const { id, title, release_year, image, genre } = MovieProp;
+
     return (
-        <div className="card mb-4 p-0">
-            <img className="card-img-top" src="https://pad.mymovies.it/filmclub/2002/06/001/locandina.jpg" alt="poster_movie" />
+
+        <div className="card mb-1 p-0">
+            <img src={image} alt={title} />
             <div className="card-body">
-                <h5 className="card-title">Titolo:</h5>
-                <p className="card-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quam! Quaerat molestias autem hic neque quia quod asperiores, vel veniam mollitia repellat illo repudiandae praesentium qui deserunt velit adipisci explicabo!
-                </p>
-                <Link to="movies/1" className="btn btn-warning">
-                    See more
+                <h5 className="card-title">{title}</h5>
+                <p>{release_year}</p>
+                <p>{genre}</p>
+                <Link to= {`movies/${id}`} className="btn btn-warning">
+                    Dettagli
                 </Link>
             </div>
         </div>
+
     )
 }
 
