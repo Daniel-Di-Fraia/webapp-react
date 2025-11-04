@@ -10,7 +10,7 @@ const ReviewCard = ({ reviewProp }) => {
                     <p className="card-text">
                         {text}
                     </p>
-                    <strong>Vote: {vote}</strong>
+                    <strong>⭐{vote}/5</strong>
                     <address><i>By {name}</i></address>
                 </div>
             </div>
