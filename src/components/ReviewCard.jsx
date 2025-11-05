@@ -6,7 +6,7 @@ const ReviewCard = ({ reviewProp }) => {
     return (
         <>
             <div className="card mb-4">
-                <div className="card-body">
+                <div className="card-body bg-warning-subtle">
                     <p className="card-text">
                         {text}
                     </p>

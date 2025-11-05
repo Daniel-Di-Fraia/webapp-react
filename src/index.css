@@ -14,10 +14,10 @@ img {
     width: 28%;
 }
 
-.p-dim {
-    width: 70%;
-}
-
 .gap {
     gap: 8rem;
+}
+
+.text-dim {
+    font-size: 60px;
 }

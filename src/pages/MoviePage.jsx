@@ -10,6 +10,9 @@ import axios from "axios"
 // import comp singola review
 import ReviewCard from "../components/reviewCard"
 
+//import form comp
+import FormReview from "../components/FormReview"
+
 
 const MoviePage = () => {
 
@@ -46,14 +49,16 @@ const MoviePage = () => {
 
     return (
         <>
-            <div className="container d-flex justify-content-center gap">
-                <section className="pt-5 mb-3 text-white wi">
+            <div className="container">
+                <section className="pt-5 mb-3 text-white wi d-flex">
                     <div className="mb-3">
                         <img className="dim" src={movie?.image} alt={movie?.title} />
                     </div>
-                    <h1>{movie?.title}</h1>
-                    <h3 className="text-white"><i>By {movie?.director}</i></h3>
-                    <p className="p-dim pb-2">{movie?.abstract}</p>
+                    <div className="ms-5 flex-shrink-0">
+                        <h1 className="text-dim">{movie?.title}</h1>
+                        <h3 className="text-white fs-1"><i>By {movie?.director}</i></h3>
+                        <p className="pb-2 fs-4">{movie?.abstract}</p>
+                    </div>
                 </section>
                 <section>
                     <header className="d-flex justify-content-between mb-4 text-white pt-5">
@@ -62,6 +67,9 @@ const MoviePage = () => {
                     {renderReviews()}
                 </section>
             </div>
+            <section className="container pb-5">
+                <FormReview idProp={id} reloadReviews={fecthMovie} />
+            </section>
             <footer className="pb-5 container d-flex justify-content-center">
                 <Link className="btn btn-warning fs-5" to="/">Back to home</Link>
             </footer>
