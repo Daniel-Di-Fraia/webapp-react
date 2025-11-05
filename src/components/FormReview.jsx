@@ -62,7 +62,7 @@ const FormReview = ({ idProp, reloadReviews }) => {
                         <input name="vote" type="number" min="1" max="5" className="form-control" value={formData.vote} onChange={setFieldValue} />
                     </div>
                     <div className="d-flex justify-content-end pt-3">
-                        <button type="submit" className="btn btn-warning">Invia Recensione!</button>
+                        <button type="submit" className="btn btn-warning fs-5">Invia Recensione!</button>
                     </div>
                 </form>
             </div>
