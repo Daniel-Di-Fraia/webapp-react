@@ -45,7 +45,7 @@ const FormReview = ({ idProp, reloadReviews }) => {
     return (
         <div className="card">
             <header className="card-header bg-warning-subtle">
-                <h5 className="fs-2">Add your review</h5>
+                <h5 className="fs-2 text-warning">Add your review</h5>
             </header>
             <div className="card-body bg-warning-subtle">
                 <form onSubmit={handleSubmit}>
