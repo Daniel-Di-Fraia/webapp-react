@@ -45,7 +45,7 @@ const FormReview = ({ idProp, reloadReviews }) => {
     return (
         <div className="card">
             <header className="card-header bg-warning-subtle">
-                <h5 className="fs-2 text-warning">Add your review</h5>
+                <h5 className="fs-2">Aggiungi la tua recensione</h5>
             </header>
             <div className="card-body bg-warning-subtle">
                 <form onSubmit={handleSubmit}>
@@ -62,7 +62,7 @@ const FormReview = ({ idProp, reloadReviews }) => {
                         <input name="vote" type="number" min="1" max="5" className="form-control" value={formData.vote} onChange={setFieldValue} />
                     </div>
                     <div className="d-flex justify-content-end pt-3">
-                        <button type="submit" className="btn btn-primary">Invia Recensione!</button>
+                        <button type="submit" className="btn btn-warning">Invia Recensione!</button>
                     </div>
                 </form>
             </div>
