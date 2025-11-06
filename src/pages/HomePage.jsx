@@ -7,18 +7,25 @@ import axios from "axios"
 // import state e effetc
 import { useState, useEffect } from "react"
 
+import { useGlobal } from "../contexts/ContextGlobal"
+
 
 //pagina home
 const HomePage = () => {
+
+    // etrapoliamo da context var di stato
+    const { setIsLoading } = useGlobal();
 
     //variabile di stato
     const [movies, setMovies] = useState([]);
 
     //chiamata axios
     const fecthMovies = () => {
+        setIsLoading(true);
         axios.get('http://localhost:3000/movies')
             .then(response => { setMovies(response.data) })
             .catch(error => { console.log(error) })
+            .finally(() => { setIsLoading(false) })
     }
 
     // faccio partire la chiamata a primo montaggio comp
